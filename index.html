@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>New York Weather - Multi-Agents Weather by Gemini, GPT, Anthropic</title>
+    <style>
+        body {
+            font: 75% georgia, sans-serif;
+            line-height: 1.88889;
+            color: #555753;
+            background: linear-gradient(135deg, hsla(172, 40.3%, 45.7%, 0.40), hsla(200, 40%, 80%, 0.60));
+            margin: 0;
+            padding: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        .header {
+            background-color: #26C6DA;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        }
+        .content {
+            flex: 1;
+            padding: 20px;
+            line-height: 1.6;
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1em 0;
+            width: 100%;
+            flex-shrink: 0;
+        }
+        #datetime {
+            font-size: 1.2em;
+            text-align: center;
+            margin-top: 20px;
+            color: #26C6DA;
+        }
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        header h1 {
+            color: white;
+            text-shadow: 2px 2px 4px #000000;
+            font-size: 2em;
+            text-indent: 0;
+            white-space: normal;
+            overflow: visible;
+            float: none;
+            display: inline-block;
+            width: auto;
+            height: auto;
+        }
+        h2 {
+            color: #26C6DA;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        p {
+            margin-top: 0;
+            text-align: justify;
+        }
+        .weather-icon {
+            font-size: 4em;
+            text-align: center;
+            margin: 20px 0;
+        }
+        .temperature {
+            font-size: 2em;
+            text-align: center;
+            color: #26C6DA;
+        }
+        @media (max-width: 600px) {
+            .content, .container {
+                width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <h1>Multi-Agents Weather by Gemini, GPT, Anthropic</h1>
+    </header>
+
+    <div class="content">
+        <div id="datetime"></div>
+        <h2>Weather in New York</h2>
+        <div class="weather-icon">🌤️</div>
+        <p class="temperature">17°C</p>
+        <p>Current weather: Partly sunny</p>
+        <h2>About New York</h2>
+        <p>New York City, often called New York, is the most populous city in the United States. With a rich history and diverse culture, it's a global hub for finance, fashion, and entertainment.</p>
+        <h2>Climate Information</h2>
+        <p>New York City experiences a humid subtropical climate, characterized by warm summers and cold winters. The city's proximity to the Atlantic Ocean influences its weather patterns, often resulting in mild temperatures compared to inland areas at the same latitude.</p>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2023 Multi-Agents Weather. All rights reserved.</p>
+    </footer>
+
+    <script>
+        function updateDateTime() {
+            const now = new Date();
+            const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit', timeZoneName: 'short' };
+            document.getElementById('datetime').textContent = now.toLocaleDateString('en-US', options);
+        }
+
+        updateDateTime();
+        setInterval(updateDateTime, 1000);
+    </script>
+</body>
+</html>
